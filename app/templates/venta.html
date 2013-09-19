@@ -1,0 +1,46 @@
+<style type="text/css">
+table{border-collapse:collapse; text-align: center;}
+.borde
+{
+border: 1px solid black;
+border-collapse:collapse;
+}
+</style>
+  
+<!DOCTYPE HTML>
+<html lang="es-ES">
+ <head>
+  <title>El título aquí</title>
+  <meta charset="UTF-8">
+  <script>
+function printpage()
+  {
+  window.print()
+  window.history.back()
+  }
+</script>
+<head>
+  
+ </head >
+<body >
+
+ 
+<table>
+<tr><td class='borde'> # FAC </td><td class='borde'> FECHA Y HORA </td><td class='borde'> MONTO </td></tr>
+{% for d in g.all %}
+<tr><td class='borde'>{{d.id}}</td>
+<td class='borde'>{{d.fecha}}</td>
+<td class='borde'>{{d.Total}}</td>
+{% endfor %}
+</tr>
+<tr><td></td><td></td><td>. . . . . . .</td></tr>
+<tr>
+<td></td><td>TOTAL INGRESO</td><td class='borde'>{{e}}</td>
+</tr>
+</table>
+
+
+
+</body>
+</html>
+

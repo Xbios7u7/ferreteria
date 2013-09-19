@@ -1,0 +1,90 @@
+{% extends 'bm1.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/docs.css">
+    <link rel="stylesheet" href="/static/css/codemirror.css">
+    <link rel="stylesheet" href="/static/css/editor.css">
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/static/admin/css/ie.css" /><![endif]-->
+
+<script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/calendar.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+{% endblock head %}
+
+{% block contenido %}
+<form method="post" action=".">{% csrf_token %}
+	
+
+	{{formulario_p.Proveedor.errors }}
+	{{formulario_p.Proveedor.label_tag }} 
+	{{formulario_p.Proveedor}} <a href="/admin/tablas/proveedor/add/" class="add-another" id="add_id_Proveedor" onclick="return showAddAnotherPopup(this);"> <img src="/static/admin/img/icon_addlink.gif" width="10" height="10" alt="Añadir otro"/></a>
+
+	{{formulario_p.Nombre.errors }}
+	{{formulario_p.Nombre.label_tag }} 
+	{{formulario_p.Nombre}}
+	
+	{{formulario_p.Observacion.errors }}
+	{{formulario_p.Observacion.label_tag }} 
+	{{formulario_p.Observacion}}
+
+	{{formulario_p.Descripcion.errors }}
+	{{formulario_p.Descripcion.label_tag }} 
+	{{formulario_p.Descripcion}}
+
+	{{formulario_p.Departamento.errors }}
+	{{formulario_p.Departamento.label_tag }} 
+	{{formulario_p.Departamento}}<a href="/admin/tablas/departamento/add/" class="add-another" id="add_id_Departamento" onclick="return showAddAnotherPopup(this);"> <img src="/static/admin/img/icon_addlink.gif" width="10" height="10" alt="Añadir otro"/></a>
+
+	{{formulario_p.Pais.errors }}
+	{{formulario_p.Pais.label_tag }} 
+	{{formulario_p.Pais}}<a href="/admin/tablas/pais/add/" class="add-another" id="add_id_Pais" onclick="return showAddAnotherPopup(this);"> <img src="/static/admin/img/icon_addlink.gif" width="10" height="10" alt="Añadir otro"/></a>
+	
+
+	{{formulario_p.Pintura_Base.errors }}
+	{{formulario_p.Pintura_Base.label_tag }} 
+	{{formulario_p.Pintura_Base}}
+
+	{{formulario_p.Observacion.errors }}
+	{{formulario_p.Observacion.label_tag }} 
+	{{formulario_p.Observacion}}
+
+	{{formulario_p.Tipo_Codigo_Barras.errors }}
+	{{formulario_p.Tipo_Codigo_Barras.label_tag }}
+	{{formulario_p.Tipo_Codigo_Barras}}
+	
+
+	{{formulario_p.Codigo_Barras.errors }}
+	{{formulario_p.Codigo_Barras.label_tag }}
+	{{formulario_p.Codigo_Barras}}
+
+	<br>
+	<input type="submit"  value="Guardar">
+
+</form>	
+
+
+
+  <script type="text/javascript">document.getElementById("id_Unidad").focus();</script>
+
+
+
+
+<script type="text/javascript">
+(function($) {
+    var field;
+
+
+})(django.jQuery);
+</script>
+
+
+{% endblock contenido %}
+

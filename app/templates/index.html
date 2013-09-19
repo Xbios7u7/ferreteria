@@ -1,0 +1,12 @@
+<html>
+<head>
+	<title>hola</title>
+</head>
+<body>
+{% for cliente in object_list %}
+  {{cliente.id}}{{cliente.CI}}{{cliente.Nombres}}{{cliente.Apellidos}}
+{% empty %}
+   basio
+{% endfor %}
+</body>
+</html>

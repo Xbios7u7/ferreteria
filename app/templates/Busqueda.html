@@ -1,0 +1,40 @@
+
+	
+<!DOCTYPE HTML>
+<html lang="es-ES">
+ <head>
+  <title>El título aquí</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/docs.css">
+    <link rel="stylesheet" href="/static/css/codemirror.css">
+    <link rel="stylesheet" href="/static/css/editor.css">
+ </head>
+<body>
+  <div class="blanco">
+  <div class="container ">
+  <br>  
+<form method="post" action=".">{% csrf_token %}
+	
+	{{formulario.cliente}}
+
+  <br>
+	<input type="submit" class="btn btn-primary" value="BUSCAR">
+  <a href="/IP/" class="btn btn-success">CREAR NUEVO</a>
+
+</form>
+<table class="table table-bordered">
+<tr> <th>ID</th><th>Nombre</th><th>Precio Unitario</th><th>Unidad</th></tr>
+{% for producto in producto %}
+              <tr>
+              <td><a href="/PRODUCTO/{{producto.id}}">{{producto.id}}</a> </td><td>{{producto.Nombre}}</td>
+              	<td>{{producto.Stock.Costo.Precio_Unidad}}</td>
+                  <td> {{producto.Stock.Unidad}}</td>
+
+              </tr>
+  {%endfor%}	
+</table>
+</div></div>
+</body>
+</html>
+

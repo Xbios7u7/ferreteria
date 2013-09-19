@@ -1,0 +1,56 @@
+
+	
+<!DOCTYPE HTML>
+<html lang="es-ES">
+ <head>
+  <title>Añadir Precio | Sitio de administración de Django</title>
+<link rel="stylesheet" type="text/css" href="/static/admin/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css" />
+<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="/static/admin/css/ie.css" /><![endif]-->
+
+<script type="text/javascript">window.__admin_media_prefix__ = "/static/admin/";</script>
+
+<script type="text/javascript" src="/admin/jsi18n/"></script>
+<script type="text/javascript" src="/static/admin/js/core.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.js"></script>
+<script type="text/javascript" src="/static/admin/js/jquery.init.js"></script>
+<script type="text/javascript" src="/static/admin/js/actions.js"></script>
+<script type="text/javascript" src="/static/admin/js/calendar.js"></script>
+<script type="text/javascript" src="/static/admin/js/admin/DateTimeShortcuts.js"></script>
+
+
+<meta name="robots" content="NONE,NOARCHIVE" />
+ </head>
+<body>
+<form method="post" action="">{% csrf_token %}
+	<p>{{formulario_p.Acesor.errors }}
+	<label>{{formulario_p.Acesor.label }} </label>
+	{{formulario_p.Acesor }}</p>
+
+	<p>{{formulario_p.Stock.errors }}
+	{{formulario_p.Stock.label }} 
+	{{formulario_p.Stock }}<a href="/admin/tablas/stock/add/" class="add-another" id="add_id_Stock" onclick="return showAddAnotherPopup(this);"> <img src="/static/admin/img/icon_addlink.gif" width="10" height="10" alt="Añadir otro"/></a>
+	
+
+	<input type="submit">
+
+</form>	
+
+
+
+  <script type="text/javascript">document.getElementById("id_Unidad").focus();</script>
+
+
+
+
+<script type="text/javascript">
+(function($) {
+    var field;
+
+
+})(django.jQuery);
+</script>
+</body>
+</html>
+

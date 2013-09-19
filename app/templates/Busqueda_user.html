@@ -1,0 +1,53 @@
+
+	
+<!DOCTYPE HTML>
+<html lang="es-ES">
+ <head>
+  <title>El título aquí</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/docs.css">
+    <link rel="stylesheet" href="/static/css/codemirror.css">
+    <link rel="stylesheet" href="/static/css/editor.css">
+ </head>
+<body>
+  <div class="blanco">
+  <div class="container ">
+  <br>  
+<form method="post" action=".">{% csrf_token %}
+	
+	{{formulario.cliente}}
+
+  <br>
+	<input type="submit" class="btn btn-primary" value="BUSCAR">
+  
+
+</form>
+{% if cl %}
+<a href="/IC/{{cl}}" class="btn btn-success">Crear Cliente : {{cl}}</a>
+{% else %}
+
+
+{% if not cliente %}
+  Ingrese CI
+{% else %}  
+{% for cliente in cliente %}
+  <table class="table table-bordered">
+<tr> <th>CI</th><th>NOMBRES</th><th>APELLIDOS</th><th>DIRECCION</th></tr>
+              <tr>
+              <td>{{cliente.CI}}</a> </td><td>{{cliente.Nombres}}</td>
+              	<td>{{cliente.Apellidos}}</td><td>{{cliente.Direccion}}</td>
+                  
+
+              </tr>
+<a href="/F/{{cliente.CI}}" class="btn btn-success">CREAR FACTURA</a>
+</table>
+
+<a href="/IC/" class="btn btn-success">CREAR CLIENTE</a> {{cl}}
+ {%endfor%} 
+{% endif %}
+{% endif %}
+</div><br></div>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+
+	
+<!DOCTYPE HTML>
+<html lang="es-ES">
+ <head>
+  <title>El título aquí</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/docs.css">
+    <link rel="stylesheet" href="/static/css/codemirror.css">
+    <link rel="stylesheet" href="/static/css/editor.css">
+ </head>
+<body>
+  <div class="blanco">
+  <div class="container ">
+  <br>  
+<form method="post" action=".">{% csrf_token %}
+	
+	{{formulario}}
+
+  <br>
+	<input type="submit" class="btn btn-primary" value="GRABAR">
+  
+
+</form>
+
+{% for d1 in d1 %}
+  Numero de tiket {{d1.id}} <br>
+  <table class="table table-bordered"><tr><th>Cantidad</th><th>Detalles</th><th>PRECIO UNITARIO</th><th>PRECIO</th></tr>
+  {% for d2 in d1.cantidad.all %}
+    <tr><td>{{d2.Numero}}</td>
+    <td>{{d2.producto.Proveedor.id}}-{{d2.producto.id}} {{d2.producto}} {{d2.producto.Descripcion}}</td>
+    <td>{{d2.producto.Stock.Costo}}</td>
+    <td>{{d2.precio }}</td>
+      </tr>
+  {% endfor %}
+  <tr></tr>
+   <tr><td></td><td></td><th>SUB TOTAL</th><td>{{d1.SubTotal}}</td></tr>  
+   <tr><td></td><td></td><th>IVA</th><td>{{d1.iva}}</td></tr> 
+   <tr><td></td><td></td><th>TOTAL</th><td>{{d1.Total}}</td></tr> 
+   </table>
+   <a href="/PRINT/F/{{d1.id}}" class="btn btn-success">IMPRIMIR</a>
+{% endfor %}   
+
+</div></div>
+</body>
+</html>
+

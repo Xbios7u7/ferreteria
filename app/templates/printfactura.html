@@ -1,0 +1,46 @@
+<style type="text/css">
+table{border-collapse:collapse; text-align: center;}
+.borde
+{
+border: 1px solid black;
+border-collapse:collapse;
+}
+</style>
+	
+<!DOCTYPE HTML>
+<html lang="es-ES">
+ <head>
+  <title>El título aquí</title>
+  <meta charset="UTF-8">
+  <script>
+function printpage()
+  {
+  window.print()
+  window.history.back()
+  }
+</script>
+  
+ </head >
+<body onload="printpage();">
+ 
+{% for d1 in d1.all %}
+  Numero de tiket {{d1.id}} <br>
+  <table class=""><tr class="borde"><th class="borde">CANTIDAD</th><th class="borde">DETALLE</th><th class="borde">P/UNIT.</th><th class="borde">V.TOTAL</th></tr>
+  {% for d2 in d1.cantidad.all %}
+    <tr><td class="borde">{{d2.Numero}}</td>
+    <td class="borde">{{d2.producto.Proveedor.id}}-{{d2.producto.id}} {{d2.producto}} {{d2.producto.Descripcion}}</td>
+    <td class="borde">{{d2.producto.Stock.Costo}}</td>
+    <td class="borde">{{d2.precio }}</td>
+      </tr>
+  {% endfor %}
+  <tr></tr>
+   <tr><td ></td><td></td><th class="borde">SUB TOTAL</th><td class="borde">{{d1.SubTotal}}</td></tr>  
+   <tr><td></td><td></td><th class="borde">IVA</th><td class="borde">{{d1.iva}}</td></tr> 
+   <tr><td></td><td></td><th class="borde">TOTAL</th><td class="borde">{{d1.Total}}</td></tr> 
+   </table>
+   
+{% endfor %}   
+
+</body>
+</html>
+
